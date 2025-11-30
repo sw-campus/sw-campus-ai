@@ -1,0 +1,13 @@
+[project]
+name = "sw-campus-ai"
+version = "0.1.0"
+description = "Software Campus's AI Services"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.122.1",
+    "paddleocr>=3.3.2",
+    "paddlepaddle>=3.2.0",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.38.0",
+]
