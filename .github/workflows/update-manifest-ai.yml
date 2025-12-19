@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: sw-campus/sw-campus-manifest
-          token: ${{ secrets.GMANIFEST_REPO_TOKEN }}
+          token: ${{ secrets.MANIFEST_REPO_TOKEN }}
           path: manifest
 
       # 5) AI deployment 이미지 태그 변경
