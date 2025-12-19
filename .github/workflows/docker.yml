@@ -33,4 +33,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ghcr.io/sw-campus/sw-campus-ai:latest
+          tags: ghcr.io/sw-campus/sw-campus-ai:${{ github.sha }}
