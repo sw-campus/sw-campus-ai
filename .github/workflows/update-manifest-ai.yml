@@ -27,12 +27,14 @@ jobs:
           SHA="${{ github.event.workflow_run.head_sha }}"
 
           if [ "$REF" = "main" ]; then
-            TAG="prod-$SHA"
+            # main 브랜치일 때는 pyproject.toml에서 버전을 읽어서 버전 태그 사용
+            VERSION=$(grep "^version = " pyproject.toml | cut -d'"' -f2)
+            VERSION_TAG="v${VERSION}"
+            echo "tag=$VERSION_TAG" >> $GITHUB_OUTPUT
+            echo "Version tag: $VERSION_TAG"
           else
-            TAG="dev-$SHA"
+            echo "tag=dev-$SHA" >> $GITHUB_OUTPUT
           fi
-
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
 
       # 3) 대상 manifest 브랜치 결정
       - name: Determine target manifest branch
