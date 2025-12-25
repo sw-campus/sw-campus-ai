@@ -24,11 +24,12 @@ jobs:
         id: tag
         run: |
           REF="${{ github.event.workflow_run.head_branch }}"
+          SHA="${{ github.event.workflow_run.head_sha }}"
 
           if [ "$REF" = "main" ]; then
-            TAG="latest"
+            TAG="prod-$SHA"
           else
-            TAG="${{ github.event.workflow_run.head_sha }}"
+            TAG="dev-$SHA"
           fi
 
           echo "tag=$TAG" >> $GITHUB_OUTPUT
@@ -84,3 +85,4 @@ jobs:
           add-paths: |
             k8s/environments/develop/values.yaml
             k8s/environments/release/values.yaml
+        continue-on-error: true
