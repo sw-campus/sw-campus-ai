@@ -31,8 +31,8 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: sw-campus
-          password: ${{ secrets.GHCR_PAT }}
+          username: minji-yoon
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build & Push Image
         run: |
