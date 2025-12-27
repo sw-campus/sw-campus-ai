@@ -2,7 +2,7 @@ name: Update Manifest (AI)
 
 on:
   workflow_run:
-    workflows: ["Build & Push AI Image"]
+    workflows: ["Build AI Image"]
     types:
       - completed
 
