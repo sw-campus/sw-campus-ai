@@ -1,6 +1,6 @@
 [project]
 name = "sw-campus-ai"
-version = "1.0.1"
+version = "1.0.2"
 description = "Software Campus's AI Services"
 readme = "README.md"
 requires-python = ">=3.9"
