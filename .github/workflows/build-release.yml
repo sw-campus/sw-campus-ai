@@ -120,11 +120,11 @@ jobs:
         with:
           token: ${{ secrets.MANIFEST_REPO_TOKEN }}
           path: manifest
-          branch: auto-update/ai-release-${{ github.sha }}
+          branch: auto-update/ai-${{ steps.version.outputs.version_tag }}
           base: release
           title: "chore(ai): update prod image to ${{ steps.version.outputs.version_tag }}"
           body: |
-            🤖 Auto-generated PR from AI release build
+            🤖 Auto-generated PR from AI build
             
             - **Image**: `ghcr.io/sw-campus/sw-campus-ai:${{ steps.version.outputs.version_tag }}`
             - **Commit**: ${{ github.sha }}
